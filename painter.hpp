@@ -21,8 +21,8 @@ template< PixelFormat Format >
 class Painter
 {
 public:
-	using Surface = Surface<Format>;
-	using NativeColor = typename Surface::NativeColor;
+	using SpecificSurface= Surface<Format>;
+	using NativeColor = typename SpecificSurface::NativeColor;
 	using AlphaColor = typename NativeColor::AlphaColor;
 
 	using CompositionOperator = void (NativeColor::*)(const AlphaColor &color);
@@ -50,7 +50,7 @@ public:
 	static constexpr CompositionOperator Plus = &NativeColor::Plus;
 
 public:
-	Painter(Surface &surface) :
+	Painter(SpecificSurface &surface) :
 		surface(surface) {}
 
 
@@ -144,7 +144,7 @@ protected:
 					 const AlphaColor &color, const CompositionOperator composition);
 
 private:
-	Surface &surface;
+	SpecificSurface &surface;
 };
 
 // native composition operator defintions
