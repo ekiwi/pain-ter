@@ -12,7 +12,7 @@ TARGET = 2d-painter
 TEMPLATE = app
 
 #CONFIG += c++14
-QMAKE_CXXFLAGS += -std=c++1y
+QMAKE_CXXFLAGS += -std=c++14
 
 macx {
     QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
