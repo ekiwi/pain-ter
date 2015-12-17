@@ -147,6 +147,27 @@ private:
 	Surface &surface;
 };
 
+// native composition operator defintions
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::Clear;
+
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::A;
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::B;
+
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::AoverB;
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::BoverA;
+
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::AinB;
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::BinA;
+
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::AoutB;
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::BoutA;
+
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::AatopB;
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::BatopA;
+
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::Xor;
+template< PixelFormat Format > constexpr typename Painter<Format>::CompositionOperator Painter<Format>::Plus;
+
 } // namespace ges
 
 } // namespace modm
