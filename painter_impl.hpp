@@ -33,8 +33,8 @@ modm::ges::Painter<Format>::drawLine(const Line &line, const AlphaColor &color, 
 		if (eY < clip.getTop() or bY > clip.getBottom()) return;
 
 		// clip vertical length
-		bY = xpcc::max(bY, clip.getTop());
-		eY = xpcc::min(eY, clip.getBottom());
+		bY = xpcc::max(bY, clip.getBottom());
+		eY = xpcc::min(eY, clip.getTop());
 		// draw visible and clipped line
 		drawVerticalLine(bX, bY, eY, color, composition);
 		return;
